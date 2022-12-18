@@ -16,7 +16,7 @@ defmodule Listophobic.Accounts.User do
 
         has_many :favorite_topics, Listophobic.Preference.FavoriteTopic
         has_many :interests, Listophobic.Preference.Interest
-        # has_many :favorites, Listophobic.Preference.Interest
+        has_many :favorites, Listophobic.Preference.Interest
 
         timestamps()
     end
