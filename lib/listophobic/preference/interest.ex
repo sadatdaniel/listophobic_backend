@@ -15,7 +15,7 @@ defmodule Listophobic.Preference.Interest do
         # field :interest_items
 
 
-        field :creation_date, :date
+        # field :creation_date, :date
         # field :last_updated, :date
 
         belongs_to :user, Listophobic.Accounts.User

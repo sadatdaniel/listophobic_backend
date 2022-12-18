@@ -14,9 +14,9 @@ defmodule Listophobic.Accounts.User do
         field :image_url, :string
         field :account_viewed, :integer, default: 0
 
-        has_many :topics, Listophobic.Preference.Topic
+        has_many :favorite_topics, Listophobic.Preference.FavoriteTopic
         has_many :interests, Listophobic.Preference.Interest
-        has_many :favorites, Listophobic.Preference.Interest
+        # has_many :favorites, Listophobic.Preference.Interest
 
         timestamps()
     end
@@ -33,6 +33,7 @@ defmodule Listophobic.Accounts.User do
         |> unique_constraint(:slug)
         |> unique_constraint(:username)
         |> unique_constraint(:email)
+        |> slugify_name()
         |> hash_password()
 
     end
@@ -50,6 +51,23 @@ defmodule Listophobic.Accounts.User do
               changeset
           end
     end
+
+    defp slugify_name(changeset) do
+        case changeset.valid? do
+          true ->
+            name = get_field(changeset, :username)
+            put_change(changeset, :slug, slugify(name))
+      
+          _ ->
+            changeset
+        end
+      end
+      
+      defp slugify(str) do
+        str
+        |> String.downcase()
+        |> String.replace(~r/[^\w-]+/u, "-")
+      end
 
 
 

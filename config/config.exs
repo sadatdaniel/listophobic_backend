@@ -7,6 +7,18 @@
 # General application configuration
 import Config
 
+config :listophobic, Listophobic.Repo,
+  database: "listophobic_repo",
+  username: "user",
+  password: "pass",
+  hostname: "localhost"
+
+config :listophobic, Listophobic.Repo,
+  database: "listophobic_repo",
+  username: "user",
+  password: "pass",
+  hostname: "localhost"
+
 config :listophobic,
   ecto_repos: [Listophobic.Repo]
 

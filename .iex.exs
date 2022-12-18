@@ -1,5 +1,5 @@
 alias Listophobic.Accounts.User
-alias Listophobic.Preference.Topic
+alias Listophobic.Preference.FavoriteTopic
 alias Listophobic.Preference.Interest
 alias Listophobic.Preference.InterestItem
 

@@ -1,8 +1,8 @@
-defmodule Listophobic.Preference.Topic do
+defmodule Listophobic.Preference.FavoriteTopic do
     use Ecto.Schema
     import Ecto.Changeset
 
-    schema "topics" do
+    schema "favorite_topics" do
         field :name, :string
         belongs_to :user, Listophobic.Accounts.User
         timestamps()

@@ -14,7 +14,7 @@ defmodule Listophobic.Preference.InterestItem do
     end
 
     def changeset(interest_item, attrs) do
-        required_fields = [:title, :interest_id]
+        required_fields = [:title]
         optional_fields = [:order, :description, :link]
 
         interest_item

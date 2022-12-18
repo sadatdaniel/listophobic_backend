@@ -25,7 +25,7 @@
 
 alias Listophobic.Repo
 alias Listophobic.Accounts.User
-alias Listophobic.Preference.{Interest, InterestItem, Topic}
+alias Listophobic.Preference.{Interest, InterestItem}
 
 
 daniel = %User{} 
@@ -38,7 +38,8 @@ daniel = %User{}
 |> Repo.insert!
 
 maham = %User{} 
-|> User.changeset(%{username: "maham", 
+|> User.changeset(%{
+    username: "maham", 
     email: "mahamkhokhar96@gmail.com", 
     password: "secret", 
     slug: "maham", 
@@ -46,7 +47,8 @@ maham = %User{}
 |> Repo.insert!
 
 shakira = %User{} 
-|> User.changeset(%{username: "shakira", 
+|> User.changeset(%{
+    username: "shakira", 
     email: "atkiashakira@gmail.com", 
     password: "secret", 
     slug: "shakira", 
@@ -63,11 +65,13 @@ shakira = %User{}
         interest_items: [
             %InterestItem{
                 title: "Harry Potter",
-                link: "amazon.com/books"
+                link: "amazon.com/books",
+                order: 1
             },
             %InterestItem{
                 title: "A man called ove",
-                link: "amazon.com/books/a_man_called_ove"
+                link: "amazon.com/books/a_man_called_ove",
+                order: 2
             },
         ]
 } |> Repo.insert!
@@ -82,11 +86,13 @@ shakira = %User{}
         interest_items: [
             %InterestItem{
                 title: "Harry Potter",
-                link: "imdb.com/books"
+                link: "imdb.com/books",
+                order: 1
             },
             %InterestItem{
                 title: "Superman movie",
-                link: "imdb.com/books/a_man_called_ove"
+                link: "imdb.com/books/a_man_called_ove",
+                order: 2
             },
         ]
     } |> Repo.insert!
@@ -102,11 +108,13 @@ shakira = %User{}
         interest_items: [
             %InterestItem{
                 title: "attack on titans",
-                link: "kissanime.com/books"
+                link: "kissanime.com/books",
+                order: 1
             },
             %InterestItem{
                 title: "hunter x hunter",
-                link: "kissanime.com/books/a_man_called_ove"
+                link: "kissanime.com/books/a_man_called_ove",
+                order: 2
             },
         ]
     } |> Repo.insert!
@@ -122,11 +130,18 @@ shakira = %User{}
         interest_items: [
             %InterestItem{
                 title: "spy x family",
-                link: "kissanime.com/books"
+                link: "kissanime.com/books",
+                order: 1
             },
             %InterestItem{
                 title: "codegeas",
-                link: "kissanime.com/books/a_man_called_ove"
+                link: "kissanime.com/books/a_man_called_ove",
+                order: 2
+            },
+            %InterestItem{
+                title: "prodigy",
+                link: "kissanime.com/books/a_man_called_ove",
+                order: 3
             },
         ]
     } |> Repo.insert!
