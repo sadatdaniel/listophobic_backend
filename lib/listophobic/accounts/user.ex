@@ -1,7 +1,7 @@
 defmodule Listophobic.Accounts.User do
     use Ecto.Schema
     import Ecto.Changeset
-
+# might be marged into private folder
     @schema_prefix
     schema "users" do
         field :username, :string
