@@ -1,4 +1,5 @@
 # Preferences Context
+# Might be changed to private
 
 defmodule Listophobic.Preference do
 
